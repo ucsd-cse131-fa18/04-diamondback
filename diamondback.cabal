@@ -1,0 +1,82 @@
+name:                diamondback
+version:             0.1.0.0
+synopsis:            Starter code for compiler-fer-de-lance
+license:             MIT
+license-file:        LICENSE
+author:              Ranjit Jhala
+maintainer:          jhala@cs.ucsd.edu
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.10
+
+data-files:
+  tests/adder.json,
+  tests/boa.json,
+  tests/cobra.json,
+  tests/anf.json,
+  tests/dynamic.json,
+  tests/static.json,
+  tests/diamondback.json,
+  tests/yourTests.json
+
+Library
+  ghc-options:         -W -threaded
+  exposed-modules:     Language.Diamondback.Utils,
+                       Language.Diamondback.UX,
+                       Language.Diamondback.Types,
+                       Language.Diamondback.Parser,
+                       Language.Diamondback.Checker,
+                       Language.Diamondback.Normalizer,
+                       Language.Diamondback.Label,
+                       Language.Diamondback.Asm,
+                       Language.Diamondback.Compiler,
+                       Language.Diamondback.Runner
+
+  -- other-extensions:
+  build-depends:       array, base,
+                       containers,
+                       pretty,
+                       cmdargs,
+                       process,
+                       directory,
+                       filepath,
+                       semigroups,
+                       megaparsec,
+                       tasty,
+                       tasty-hunit,
+                       tasty-rerun,
+                       process,
+                       text
+
+  hs-source-dirs:      lib
+  default-language:    Haskell2010
+
+Executable diamondback 
+
+  default-language:    Haskell2010
+  ghc-options:         -W -threaded
+  main-is:             Main.hs
+  hs-source-dirs:      bin
+  build-depends:       base,
+                       diamondback 
+
+test-suite test
+  default-language: Haskell98
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   tests
+  ghc-options:      -threaded
+  main-is:          Test.hs
+  other-modules:    Common
+  build-depends:    base,
+                    directory,
+                    filepath,
+                    tasty,
+                    tasty-hunit,
+                    tasty-rerun,
+                    process,
+                    text,
+                    aeson,
+                    bytestring,
+                    base,
+                    unordered-containers,
+                    diamondback 
