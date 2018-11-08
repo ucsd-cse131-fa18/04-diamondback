@@ -368,6 +368,19 @@ to contain the labels and code for handling the
 three different kinds of run-time errors, namely
 type-errors and arithmetic overflow.
 
+Don't forget to copy over your error-handling code
+ from `03-cobra`!
+
+```c
+-- c-bits/main.c
+/*
+
+Copy over any error-detection functions here
+
+*/
+```
+
+
 
 ## Tests (5-for-5)
 
