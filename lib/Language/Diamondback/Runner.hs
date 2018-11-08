@@ -22,8 +22,6 @@ import Language.Diamondback.Types  hiding     (Program, Result)
 import Language.Diamondback.Parser
 import Language.Diamondback.Compiler
 
-import Debug.Trace (trace)
-
 topMain:: IO ()
 topMain = runCompiler `catch` (esHandle stderr exitFailure)
 
