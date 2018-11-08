@@ -372,7 +372,7 @@ Don't forget to copy over your error-handling code
  from `03-cobra`!
 
 ```c
--- c-bits/main.c
+// c-bits/main.c
 /*
 
 Copy over any error-detection functions here
